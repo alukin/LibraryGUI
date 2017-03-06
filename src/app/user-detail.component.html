@@ -1,0 +1,11 @@
+  <h2>{{libuser.login}} details!</h2>
+  <div>
+    <label>id: </label>{{libuser.user_id}}</div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="Libuser.firsName" placeholder="firstName" />
+    <input [(ngModel)]="Libuser.lastName" placeholder="lastName" />
+   </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="save()">Save</button>
+  

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Hero }        from './LibUser';
-import { HeroService } from './LibUser.service';
+import { LibUser }        from './LibUser';
+import { LibUserService } from './LibUser.service';
 
 @Component({
   moduleId: module.id,
@@ -16,6 +16,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.libuserService.getUsers()
-      .then(users => this.users = users.slice(1, 5));
+      .then(users => this.users = users.slice(0,10));
   }
 }

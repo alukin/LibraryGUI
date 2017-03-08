@@ -26,7 +26,7 @@ import {LibUserService} from './LibUser.service';
         HttpModule,
         RouterModule,
         LocalStorageModule.withConfig({
-            prefix: 'my-app',
+            prefix: 'library2-app',
             storageType: 'localStorage'
         })
     ],

@@ -24,10 +24,19 @@ export class UsersComponent implements OnInit {
         .then(users => this.users = users);
   }
 
-  add(name: string): void {
+  add(name: string, email:string): void {
     name = name.trim();
-    if (!name) { return; }
-    this.libuserService.create(name)
+    email = email.trim();
+    if (!name || !email) {
+      return;
+    }
+
+    let user:LibUser = new LibUser();
+    user.login = name;
+    user.email = email;
+    user.isLibrarian=false;
+
+    this.libuserService.create(user)
       .then(user => {
         this.users.push(user);
         this.selectedUser = null;

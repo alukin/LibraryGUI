@@ -10,7 +10,7 @@ import { LibUser } from './LibUser';
 export class LibUserService {
   private headers = new Headers({'Content-Type': 'application/json'});
   private usersUrl = 'http://localhost:8080/users';  // URL to web api
-  private token:string ='12345678';
+  private token:string;
   constructor(
         private http: Http,
         private localStService: LocalStorageService
@@ -18,16 +18,21 @@ export class LibUserService {
 
   login(login:string, password: string){
     //TODO: implement later
+    this.token = "12345678";
     this.localStService.add('login',login);
     this.localStService.add('password',login);
     this.localStService.add('token',this.token);
+    this.headers.append('Authorization: Bearer',this.token);
   }
 
   getUsers(): Promise<LibUser[]> {
     const url = `${this.usersUrl}/all`;
     return this.http.get(url,{headers: this.headers})
                .toPromise()
-               .then(response => response.json().users as LibUser[])
+               .then(response =>{
+                 console.log("user JSON: "+JSON.stringify(response.json()));
+                 return Promise.resolve(response.json().users as LibUser[]);
+               })
                .catch(this.handleError);
   }
 
@@ -37,7 +42,7 @@ export class LibUserService {
     return this.http.get(url,{headers: this.headers}).toPromise()
          .then(response => {
           let user: LibUser;
-          console.log("JSON: "+JSON.stringify(response.json()));
+          console.log("user JSON: "+JSON.stringify(response.json()));
           user = response.json().users[0];
           console.log("User: "+user.login)
           return Promise.resolve(user);
@@ -47,27 +52,34 @@ export class LibUserService {
        );
   }
 
-  //TODO: change below
-  create(id:  string): Promise<LibUser> {
-     const url = `${this.usersUrl}/${id}`;
-    return this.http.get(url)
+  create(user:  LibUser): Promise<LibUser> {
+    const url = `${this.usersUrl}/add`;
+    let data={"user":null};
+    data.user = user;
+    return this.http.post(url,data,{headers: this.headers})
       .toPromise()
-      .then(response => response.json().data as LibUser)
-      .catch(this.handleError);
-  }
-  update(id:  string): Promise<LibUser> {
-     const url = `${this.usersUrl}/${id}`;
-    return this.http.get(url)
-      .toPromise()
-      .then(response => response.json().data as LibUser)
+      .then(response =>{
+        console.log("user create JSON: "+JSON.stringify(response.json()));
+        response.json().users[0] as LibUser;
+      })
       .catch(this.handleError);
   }
 
-  delete(id: number): Promise<LibUser> {
-      const url = `${this.usersUrl}/${id}`;
-    return this.http.get(url)
+  update(user:  LibUser): Promise<LibUser> {
+    const url = `${this.usersUrl}/update`;
+    let data={"user":null};
+    data.user = user;
+    return this.http.post(url,data,{headers: this.headers})
       .toPromise()
-      .then(response => response.json().data as LibUser)
+      .then(response => response.json().users[0] as LibUser)
+      .catch(this.handleError);;
+  }
+
+  delete(id: number): Promise<number> {
+      const url = `${this.usersUrl}/del/${id}`;
+       return this.http.get(url)
+      .toPromise()
+      .then(response => response.json().retcode as number)
       .catch(this.handleError);
   }
 

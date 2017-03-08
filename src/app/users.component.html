@@ -1,7 +1,8 @@
 <h2>Library users</h2>
 <div>
-  <label>User name:</label> <input #userName />
-  <button (click)="add(userName.value); userName.value=''">
+  <label>User login:</label> <input #userName />
+  <label>User e-mail:</label> <input #userEmail />
+  <button (click)="add(userName.value, userEmail.value); userName.value=''; userEmail.value=''">
     Add
   </button>
 </div>
@@ -9,6 +10,7 @@
   <li *ngFor="let user of users" (click)="onSelect(user)"
       [class.selected]="user === selectedUser">
     <span>{{user.user_id}}</span>
+    <span>{{user.login}}</span>
     <span>{{user.firstName}} {{user.lastName}}</span>
     <button class="delete"
       (click)="delete(user); $event.stopPropagation()">x</button>

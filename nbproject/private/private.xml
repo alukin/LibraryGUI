@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/al/JavaTeach/LibraryGUI/package.json</file>
+            <file>file:/home/al/JavaTeach/LibraryGUI/src/app/dashboard.component.ts</file>
+            <file>file:/home/al/JavaTeach/LibraryGUI/src/app/LibUser.service.ts</file>
+            <file>file:/home/al/JavaTeach/LibraryGUI/src/app/users.component.html</file>
+            <file>file:/home/al/JavaTeach/LibraryGUI/src/app/app.module.ts</file>
+            <file>file:/home/al/JavaTeach/LibraryGUI/src/app/users.component.css</file>
+            <file>file:/home/al/JavaTeach/LibraryGUI/src/app/users.component.ts</file>
+            <file>file:/home/al/JavaTeach/LibraryGUI/src/app/user-detail.component.ts</file>
+            <file>file:/home/al/JavaTeach/LibraryGUI/src/app/user-detail.component.html</file>
+            <file>file:/home/al/JavaTeach/LibraryGUI/src/app/dashboard.component.css</file>
+            <file>file:/home/al/JavaTeach/LibraryGUI/src/app/LibUser.ts</file>
+            <file>file:/home/al/JavaTeach/LibraryGUI/src/app/app.component.ts</file>
+            <file>file:/home/al/JavaTeach/LibraryGUI/src/app/user-detail.component.css</file>
+            <file>file:/home/al/JavaTeach/LibraryGUI/src/app/dashboard.component.html</file>
+            <file>file:/home/al/JavaTeach/LibraryGUI/src/app/app.component.html</file>
+            <file>file:/home/al/JavaTeach/LibraryGUI/src/app/app.component.spec.ts</file>
+            <file>file:/home/al/JavaTeach/LibraryGUI/src/app/app-routing.module.ts</file>
+            <file>file:/home/al/JavaTeach/LibraryGUI/src/index.html</file>
+            <file>file:/home/al/JavaTeach/LibraryGUI/src/app/app.component.css</file>
+        </group>
+    </open-files>
 </project-private>

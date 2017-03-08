@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component }          from '@angular/core';
 
 @Component({
+  moduleId: module.id,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Library2 example Anguler2 project ';
+  title = 'Library2 GUI example project';
 }

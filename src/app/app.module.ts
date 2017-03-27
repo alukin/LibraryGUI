@@ -9,6 +9,7 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {DashboardComponent} from './dashboard.component';
 import {UsersComponent} from './users.component';
+import {LoginComponent} from './login.component';
 import {UserDetailComponent} from './user-detail.component';
 import {LibUserService} from './LibUser.service';
 
@@ -17,6 +18,7 @@ import {LibUserService} from './LibUser.service';
         AppComponent,
         DashboardComponent,
         UserDetailComponent,
+        LoginComponent,
         UsersComponent,
     ],
     imports: [

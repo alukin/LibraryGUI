@@ -15,7 +15,7 @@ import { LibUserService } from './LibUser.service';
 export class UserDetailComponent implements OnInit {
 
   libuser: LibUser = new LibUser();
-  user_id: number = 0;
+  user_id: string = "";
 
   constructor(
     private libuserService: LibUserService,

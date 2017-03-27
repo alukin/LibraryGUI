@@ -50,7 +50,7 @@ export class LibUserService {
   }
 
 //example of debug of promise
-  getUser(id: number): Promise<LibUser> {
+  getUser(id: string): Promise<LibUser> {
     const url = `${this.usersUrl}/users/byid/${id}`;
     let tok:string = this.localStService.get<string>('token');
     this.headers.append('X-Authorization',tok);
@@ -92,7 +92,7 @@ export class LibUserService {
       .catch(this.handleError);
   }
 
-  delete(id: number): Promise<number> {
+  delete(id: string): Promise<number> {
       const url = `${this.usersUrl}/users/del/${id}`;
        return this.http.get(url)
       .toPromise()
